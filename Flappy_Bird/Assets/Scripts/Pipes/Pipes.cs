@@ -23,7 +23,7 @@ public class Pipes : MonoBehaviour
     {
         if (collision.gameObject.tag=="Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameManager.instance.Reload_Scene();
         }
     }
 }
