@@ -26,9 +26,8 @@ public class FlappyBird : MonoBehaviour
             rb.velocity = Maximum_Velocity;
         }
        if(rb.velocity.y>=-1*Maximum_Velocity.y)
-        {
+       {
             rb.velocity =-1*Maximum_Velocity;
-        }
-        Debug.Log(rb.velocity);
+       }
     }
 }
