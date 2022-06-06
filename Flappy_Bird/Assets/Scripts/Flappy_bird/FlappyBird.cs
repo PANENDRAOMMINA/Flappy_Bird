@@ -7,6 +7,7 @@ public class FlappyBird : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] private Vector2 Force;
+    [SerializeField] private Vector2 Maximum_Velocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +17,18 @@ public class FlappyBird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.Space))
-       {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             rb.AddForce(Force);
-       }
+        }
+        if (rb.velocity.y <= Maximum_Velocity.y)
+        {
+            rb.velocity = Maximum_Velocity;
+        }
+       if(rb.velocity.y>=-1*Maximum_Velocity.y)
+        {
+            rb.velocity =-1*Maximum_Velocity;
+        }
+        Debug.Log(rb.velocity);
     }
 }
